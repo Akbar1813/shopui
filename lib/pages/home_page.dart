@@ -23,6 +23,7 @@ class _HomePageState extends State<HomePage> {
     'assets/images/ic_image5.jpg',
     'assets/images/ic_image6.png',
   ];
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -42,7 +43,10 @@ class _HomePageState extends State<HomePage> {
                 borderRadius: BorderRadius.circular(10),
               ),
               child: Center(
-                child: Text('7',style: TextStyle(fontWeight: FontWeight.bold),),
+                child: Text(
+                  '7',
+                  style: TextStyle(fontWeight: FontWeight.bold),
+                ),
               ),
             ),
           )
@@ -62,8 +66,7 @@ class _HomePageState extends State<HomePage> {
                   image: DecorationImage(
                     image: AssetImage('assets/images/ic_image1.jpg'),
                     fit: BoxFit.cover,
-                  )
-              ),
+                  )),
               child: Container(
                 decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(20),
@@ -73,13 +76,17 @@ class _HomePageState extends State<HomePage> {
                         Colors.black.withOpacity(0.8),
                         Colors.black.withOpacity(0.7),
                       ],
-                    )
-                ),
+                    )),
                 child: Column(
                   mainAxisAlignment: MainAxisAlignment.end,
                   children: [
-                    Text('Lifestyle Sale',style: TextStyle(fontSize: 35,color: Colors.white),),
-                    SizedBox(height: 30,),
+                    Text(
+                      'Lifestyle Sale',
+                      style: TextStyle(fontSize: 35, color: Colors.white),
+                    ),
+                    SizedBox(
+                      height: 30,
+                    ),
                     // Button
                     Container(
                       height: 50,
@@ -90,11 +97,18 @@ class _HomePageState extends State<HomePage> {
                         color: Colors.white,
                       ),
                       child: TextButton(
-                        child: Text('Shop now', style: TextStyle(color: Colors.grey.shade900,),),
-                        onPressed: (){},
+                        child: Text(
+                          'Shop now',
+                          style: TextStyle(
+                            color: Colors.grey.shade900,
+                          ),
+                        ),
+                        onPressed: () {},
                       ),
                     ),
-                    SizedBox(height: 30,),
+                    SizedBox(
+                      height: 30,
+                    ),
                   ],
                 ),
               ),
@@ -102,19 +116,19 @@ class _HomePageState extends State<HomePage> {
             // Body
             Expanded(
                 child: GridView.count(
-                  mainAxisSpacing: 10,
-                  crossAxisSpacing: 10,
-                  padding: EdgeInsets.all(10),
-                  crossAxisCount: 1,
-                  children: _listItem.map((item) => cellOfList(item)).toList(),
-                )
-            )
+              mainAxisSpacing: 10,
+              crossAxisSpacing: 10,
+              padding: EdgeInsets.all(10),
+              crossAxisCount: 1,
+              children: _listItem.map((item) => cellOfList(item)).toList(),
+            ))
           ],
         ),
       ),
     );
   }
-  Widget cellOfList(String item){
+
+  Widget cellOfList(String item) {
     return Card(
       color: Colors.transparent,
       elevation: 0,
@@ -125,13 +139,16 @@ class _HomePageState extends State<HomePage> {
             image: DecorationImage(
               image: AssetImage(item),
               fit: BoxFit.cover,
-            )
-        ),
+            )),
         child: Row(
           mainAxisAlignment: MainAxisAlignment.end,
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            Icon(Icons.favorite,color: Colors.red,size: 35,),
+            Icon(
+              Icons.favorite,
+              color: Colors.red,
+              size: 35,
+            ),
           ],
         ),
       ),
